@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="josep"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-03-19 03:46:58 PM"/>
+        <attribute name="created" value="am9zZXA7REVTS1RPUC1PNjBGMlZHOzIwMjItMDMtMTk7MDM6NDE6MTAgUE07Mjg1OA=="/>
+        <attribute name="edited" value="am9zZXA7REVTS1RPUC1PNjBGMlZHOzIwMjItMDMtMTk7MDM6NDY6NTggUE07MTsyOTgz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="TixQnty" type="Integer" array="False" size=""/>
+            <declare name="TixPrice" type="Integer" array="False" size=""/>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <output expression="&quot;Please Enter number of concert tickets: &quot;" newline="True"/>
+            <input variable="TixQnty"/>
+            <if expression="TixQnty &gt;= 25">
+                <then>
+                    <assign variable="TixPrice" expression="50.00"/>
+                </then>
+                <else>
+                    <if expression="TixQnty &lt;= 24 and TixQnty &gt;= 10">
+                        <then>
+                            <assign variable="TixPrice" expression="60.00"/>
+                        </then>
+                        <else>
+                            <if expression="TixQnty &lt;= 9 and TixQnty &gt;= 5">
+                                <then>
+                                    <assign variable="TixPrice" expression="70.00"/>
+                                </then>
+                                <else>
+                                    <assign variable="TixPrice" expression="75.00"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="Total" expression="TixQnty * TixPrice"/>
+            <output expression="&quot;Number of tickets: &quot; &amp; TixQnty" newline="True"/>
+            <output expression="&quot;Pricer per ticket: &quot; &amp; TixPrice" newline="True"/>
+            <output expression="&quot;Total Cost: &quot; &amp; Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
